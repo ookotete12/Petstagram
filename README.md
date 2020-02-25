@@ -5,9 +5,9 @@ Group Member: Ryan Gan, Hanyu Li, Teme Okotete
 ### For Group Member, follow the instructions below to make changes to work on our project in the future:
 1. Open Github Desktop(install if you don't have one, this will be really convienent for you do all things in github such as pull, push, clone, make new branches and etc...)
 2. Check the "Current Branch", if this is your first time using Github, the branch displaying should be "master" branch. 
-    DO NOT EVER WORK AND EDIT FILES ON THIS MASTER BRANCH!!!!!
-    DO NOT EVER WORK AND EDIT FILES ON THIS MASTER BRANCH!!!!!
-    DO NOT EVER WORK AND EDIT FILES ON THIS MASTER BRANCH!!!!!
+    DO NOT EVER WORK FILES ON THIS MASTER BRANCH!!!!!
+    DO NOT EVER WORK FILES ON THIS MASTER BRANCH!!!!!
+    DO NOT EVER WORK FILES ON THIS MASTER BRANCH!!!!!
 3. You can view all files in the master branch but if you want to make changes, this is what you need to do.
 4. Click on "Current Branch" and you should see all the branches. You click on "New Branch", it's going to ask you for the branch name. Give the branch a name that's related to whatever changes you're going to make. For example, if I am going to work on the '''homepage.html''' and '''store.html''' in the client side code, name the branch edithomepageAndstore. 
 5. Now you are on your new branch! It will have everything from the master branch. You can make whatever changes you want to make in this branch and it will not affect what's in the master branch.
