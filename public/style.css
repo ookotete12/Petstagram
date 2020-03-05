@@ -1,0 +1,89 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image: url(pets.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
+
+h1{
+    font-size: 50px;
+    font-family: "courier";
+}
+
+.search-container{
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+    background: #eccc68;
+}
+
+.search-container:hover > .search-txt{
+    width: 240px;
+    padding: 0 6px;
+}
+.search-container:hover > .search-btn{
+    background: #2f3542;
+}
+.search-btn{
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    color: white;
+}
+
+.search-txt{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+}
+
+.navigator{
+    position: absolute;
+    top:30%;
+    left: 5%;
+    transform: translate(-30%,-5%);
+    background-color: #eccc68;
+    height: 400px;
+    width: 200px;
+    text-align: center;
+  
+}
+
+.home:hover{
+    background: #ccae62;
+}
+
+.setting:hover{
+    background: #ccae62;
+}
+
+.home{
+    
+    font-size: 30px;
+    font-family: "courier";
+}
+
+.setting{
+    
+    font-size: 30px;
+    font-family: "courier";
+}
+
