@@ -12,29 +12,31 @@ h1{
     font-family: "courier";
 }
 
+h2{
+    font-size: 20px;
+    font-family: "courier";
+    color: #551A8B;
+}
+
+
 .search-container{
     
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-30%,-50%);
     height: 40px;
     border-radius: 40px;
     padding: 10px;
     background: #eccc68;
 }
 
-.search-container:hover > .search-txt{
-    width: 240px;
-    padding: 0 6px;
-}
-.search-container:hover > .search-btn{
-    background: #2f3542;
-}
+
+
 .search-btn{
     float: right;
     width: 40px;
-    height: 40px;
+    height: 50px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -43,7 +45,7 @@ h1{
     color: white;
 }
 
-.search-txt{
+#cse-search-box-form-id{
     border: none;
     background: none;
     outline: none;
@@ -52,13 +54,25 @@ h1{
     font-size: 16px;
     transition: 0.4s;
     line-height: 40px;
-    width: 0px;
+    width: 240px;
 }
 
+
 .navigator{
-    position: absolute;
+    position: fixed;
     top:30%;
     left: 5%;
+    transform: translate(-30%,-5%);
+    background-color: #eccc68;
+    height: 400px;
+    width: 200px;
+    text-align: center;
+  
+}
+.recommendation{
+    position: fixed;
+    top:30%;
+    left: 89%;
     transform: translate(-30%,-5%);
     background-color: #eccc68;
     height: 400px;
@@ -86,4 +100,11 @@ h1{
     font-size: 30px;
     font-family: "courier";
 }
-
+.result{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-40%,-50%);
+    height: 100px;
+    padding: 10px;
+}
