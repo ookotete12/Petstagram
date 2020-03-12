@@ -26,12 +26,10 @@ body{
 
 #col1{
     position: fixed;
-    background-color: #ccae62;
     width:15%;
     text-align: center;
     margin-right:0%;
     margin-left:7%;
-    text-align: center;
 }
 
 
@@ -48,17 +46,16 @@ body{
 #col2{
     width:50%;
     margin-right:5%;
-    margin-left:25%;
+    margin-left:26%;
     padding-top:40px;
-    background-color: cornflowerblue;
 }
 
 #col3{
+    border-left: ridge rgb(194, 183, 183) 1px;
     position: fixed;
-    float:right;
-    background-color: burlywood;
     width:18%;
     margin-left:82%;
+    text-align: center;
 }
 
 .post{
@@ -137,11 +134,8 @@ body textarea:focus{
 }
 
 #photoinsert{
-    right:100px;
-    top:200px;
     border-radius:12px;
     font-size: 20px;
-    border-bottom: none;
     font-weight: 700;
 }
 
@@ -203,10 +197,11 @@ div.circle{
   border-style:dashed;
   }
 div.circle2{
-  width: 90%;
+  width: 200px;
   height: 200px;
   padding: 60px;
   margin-top:50px;
+  display: inline-block;
   border-radius: 50%;
   border-style:dashed;
   background-image: url(pets.jpg);
@@ -239,13 +234,13 @@ div.circle2{
 }
 #cover
 {
-
-    width: 400px;
+    background-color: crimson;
+    width: 370px;
     padding: 2px;
-    margin: 10px auto 0 -45px;
+    margin: 10px auto 0 -50px;
     background-color: #ff7575;
     border-radius: 20px;
-    box-shadow: 0 10px 40px #ff7c7c, 0 0 0 20px #ffffffeb;
+    box-shadow: 0 10px 40px #ff7c7c, 0 0 0 20px rgb(213, 223, 230);
     transform: scale(0.6);
 }
 form
@@ -352,4 +347,15 @@ button span:before, button span:after
     right: -6px;
     width: 40px;
     background-color: #fff;
+}
+
+.friendlist{
+    margin-top: 15px;
+    margin-left:15px;
+    margin-right:20px;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    border-bottom: ridge gray 1px
 }
