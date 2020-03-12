@@ -4,6 +4,14 @@
     font-family: 'Courier New', Courier, monospace;
   }
 
+body{
+    background-image: url(pets.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    overflow: hidden;
+}
+
 .row{
     margin-top:-8px;
     content:'';
@@ -20,23 +28,36 @@
 }
 
 #col1{
-    background-color: aquamarine;
+    
     width:15%;
     text-align: center;
-    margin-right:1%;
-    margin-left:4%;
-    vertical-align: middle;
+    margin-right:0%;
+    margin-left:5%;
+    text-align: center;
+}
+
+
+.setting:hover,.liked:hover,.store:hover{
+    background: #ccae62;
+}
+.store,.setting,.liked{
+    font-size: 30px;
+    font-family: "courier";
+    margin-top: 35px;
+    color:black
 }
 
 #col2{
-    width:56%;
-    margin-right:2%;
-    margin-left:2%;
+    
+    width:50%;
+    margin-right:5%;
+    margin-left:5%;
+    padding-top:40px;
 }
 
 #col3{
     float:right;
-    background-color: coral;
+    background-color: burlywood;
     width:17%;
     margin-left:3%;
 }
@@ -87,8 +108,6 @@ body textarea{
     border-radius:12px;
     overflow-y:hidden;
     resize:none; 
-    
-    
 }
 #scrollbarstyle::-webkit-scrollbar-track
 {
@@ -134,18 +153,11 @@ body textarea:focus{
     color: white;
 }
 
-#clear{
-    background-color: aqua;
-    position: absolute;
-    top:120px;
-    left:1100px;
-}
-
 .footer-block{
     height:35px;
     width:75%;
     margin-top:122px;
-    margin-left:170px;
+    margin-left:150px;
     opacity: 0.5;
     padding-top:5px;
     padding-left:100px;
@@ -164,10 +176,19 @@ body textarea:focus{
 #photoinsert:hover{
     background-color: rgb(167, 167, 167);
 }
-#phoroinsert:focus{
+#photoinsert:focus{
     outline:none;
 }
 
+#name{
+    text-align: center;
+    margin-top: 10px;
+    width:auto;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+}
 div.circle{
   height: 100px;
   width: 100px;
@@ -176,9 +197,23 @@ div.circle{
   border-radius: 50%;
   shape-outside: border-box;
   position: absolute;
-  background-color: white;
   border-style:dashed;
   }
+div.circle2{
+  width: 200px;
+  height: 200px;
+  padding: 60px;
+  margin-top:50px;
+  margin-left:3px;
+  border-radius: 50%;
+  shape-outside: border-box;
+  position: static;
+  border-style:dashed;
+  background-image: url(pets.jpg);
+  background-attachment: initial;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 .tb
 {
@@ -199,6 +234,9 @@ div.circle{
     border: 0;
     background-color: transparent;
 }
+.friendinput:focus{
+    outline:none;
+}
 #cover
 {
     position: absolute;
@@ -212,7 +250,7 @@ div.circle{
 }
 form
 {
-    height: 96px;
+    height: 90px;
 }
 input[type="text"].friendinput
 {
