@@ -1,0 +1,81 @@
+form {
+    color:blanchedalmond;
+    font-size: 20pt;
+    font-family: sans-serif;
+}
+
+.login input{
+    width:100%;
+    margin-bottom:20px;
+}
+.login-box{
+    box-sizing: border-box;
+    
+}
+.login-box input[type='text'],input[type='submit'],input[type='password'] {
+    border:none;
+    border-bottom: 1px solid burlywood;
+    background:transparent;
+    outline:none;
+    height: 40px;
+    color:black;
+    font-size:16px;
+    cursor: pointer;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+body, html {
+    height: 100%;
+  }
+  
+body {
+    background-image: url("login-bg.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.button{
+    background-color:lemonchiffon;
+    color: burlywood;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+    font-family: sans-serif;
+    font-size: large;
+    
+}
+.button:hover {
+    color: burlywood;;
+    opacity: 1;
+  }
+ #create{
+    color:salmon;
+    font-size: 20px;
+    
+
+}
+#frogot{
+    color:salmon;
+    font-size: 20px;
+    
+
+}
+
+
+
+
+
+
+
+
+
