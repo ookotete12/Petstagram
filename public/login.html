@@ -1,8 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Petstagram login</title>
+        <link id="icon" type="image/png" rel="icon" href="favicon.ico" >
+        <link href="style-login.css" rel="stylesheet">
     </head>
 
-    <body></body>
+    <body>        
+            <div class="centered">
+                <div class="login-box">
+                    <form action="./login" method="post">
+                            <div class='login'>
+                                <label for="Username">Email</label> 
+                                <input type="text" id="Username" placeholder="Enter Username" name ='Username' required>
+                            </div>
+                            <div class="login">
+                                <tr><label for="Password">Password</label></tr>
+                                <td><input type="password" id="Password" placeholder="Enter Password" name='Password' minlength="8" maxlength="10" required></td>
+                            </div>
+                            <div>
+                                   <button type="submit" class='button'>Login</button>
+                            </div>
+                            
+                    </form>
+                    <script>
+                        if(location.search.includes('msg'))
+                            document.write('Email or Password doesn\'t exit');
+                    </script>
+                    <div>
+                            <a id='create' href="createaccount.html">Create Account </a>
+                            
+                    </div>
+                    <div>
+                            <a id='frogot' href="forgotpw.html">Forgot Password?</a>
+                    </div>
+                </div>
+                
+            </div>
+
+    </body>
 </html>
