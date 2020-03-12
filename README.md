@@ -1,6 +1,6 @@
 # Petstagram
 CS275 Final Project Assighment
-Group Member: Ryan Gan, Hanyu Li, Teme Okotete
+Group Member: Ryan Gan, Hangyu Li, Teme Okotete
 
 ### For Group Member, follow the instructions below to make changes to work on our project in the future:
 1. Open Github Desktop(install if you don't have one, this will be really convienent for you do all things in github such as pull, push, clone, make new branches and etc...)

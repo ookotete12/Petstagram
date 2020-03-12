@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>User Registration</title>
+     <link href="style-register.css" rel="stylesheet">
+     <link id="icon" type="image/png" rel="icon" href="favicon.ico" >
+</head>
+<body>
+    <div class='box'>
+        <div class='centered'>
+        <form action="/register" method="post" onsubmit="return checkPassword(this);">
+            <table>
+                <tr id="left"><label for="First Name" >First Name</label></tr>
+                <td><input type ="text" id="FirstName" placeholder="Enter Your First Name" name ='firstname'  required></td>
+            </table>
+            <table>
+                    <tr><label for="Last Name">Last Name</label></tr>
+                    <td><input type ="text" id="LastName" placeholder="Enter Your Last Name" name= 'lastname'  required></td>
+            </table>
+            <table>
+                <tr></tr><label for="email">Email</label></tr>
+                <td><input type ="email" id="email" placeholder="Enter Your Email Address" name='email' required></td>
+            </table>
+            <table>
+                <tr><label for="password">Password</label></tr>
+                <td><input type="password" id="password" placeholder="Enter Your Password" minlength="8" maxlength="10" name='password' value='' required></td>
+            </table>
+            <table>
+                <tr><label for="passwordConfirm">Confirm Password</label></tr>
+                <td><input type="password" id="passwordConfirm" placeholder="Confirm Your Password" minlength="8" maxlength="10" name='confirmpassword' value='' required></td>
+            </table>
+            <div class="button">
+            <input type="submit" id="submit" >
+           </div>
+           <div>
+               <p id='error'> </p>
+           </div>      
+        </form>
+        
+        </div>
+    </div>
+    <script>
+        errormess = document.getElementById('error');
+        function checkPassword(form) { 
+                password1 = form.password.value; 
+                password2 = form.confirmpassword.value;
+                if (password1 != password2) { 
+                    errormess.innerHTML = "password is not match"
+                    password2.innerHTML = '';
+                    return false; 
+                } 
+            } 
+
+           
+        if(location.search.includes('2'))
+            document.write('Email is used, Please try another one');
+                   
+    </script>
+</body>
+</html> 
+
+
