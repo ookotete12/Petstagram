@@ -28,7 +28,7 @@ body{
 }
 
 #col1{
-    
+    background-color: #ccae62;
     width:15%;
     text-align: center;
     margin-right:0%;
@@ -48,7 +48,6 @@ body{
 }
 
 #col2{
-    
     width:50%;
     margin-right:5%;
     margin-left:5%;
@@ -108,6 +107,7 @@ body textarea{
     border-radius:12px;
     overflow-y:hidden;
     resize:none; 
+    opacity: 0.7;
 }
 #scrollbarstyle::-webkit-scrollbar-track
 {
@@ -142,6 +142,7 @@ body textarea:focus{
     border-radius:12px;
     font-size: 20px;
     border-bottom: none;
+    font-weight: 700;
 }
 
 #post{
@@ -151,13 +152,15 @@ body textarea:focus{
     font-size: 20px;
     background-color:rgb(70, 123, 204);
     color: white;
+    font-weight: 700;
 }
 
 .footer-block{
     height:35px;
     width:75%;
-    margin-top:122px;
-    margin-left:150px;
+    margin-top:3px;
+    float:right;
+    margin-right: 20px;
     opacity: 0.5;
     padding-top:5px;
     padding-left:100px;
@@ -204,10 +207,9 @@ div.circle2{
   height: 200px;
   padding: 60px;
   margin-top:50px;
-  margin-left:3px;
+  margin-left:13%;
   border-radius: 50%;
   shape-outside: border-box;
-  position: static;
   border-style:dashed;
   background-image: url(pets.jpg);
   background-attachment: initial;
@@ -239,10 +241,10 @@ div.circle2{
 }
 #cover
 {
-    position: absolute;
-    width: 350px;
+
+    width: 400px;
     padding: 2px;
-    margin: 0px auto 0 -50px;
+    margin: 10px auto 0 -45px;
     background-color: #ff7575;
     border-radius: 20px;
     box-shadow: 0 10px 40px #ff7c7c, 0 0 0 20px #ffffffeb;
@@ -256,7 +258,8 @@ input[type="text"].friendinput
 {
     width: 100%;
     height: 96px;
-    font-size: 60px;
+    padding-left:30px;
+    font-size: 47px;
     line-height: 1;
 }
 input[type="text"]::placeholder
@@ -281,8 +284,8 @@ input[type="text"]::placeholder
     position: relative;
     top: -8px;
     left: 0;
-    width: 65px;
-    height: 65px;
+    width: 55px;
+    height: 55px;
     margin-top: 0;
     border-width: 15px;
     border: 15px solid #fff;
@@ -294,13 +297,13 @@ button span
 {
     position: absolute;
     top: 68px;
-    left: 43px;
+    left: 48px;
     display: block;
-    width: 45px;
+    width: 30px;
     height: 15px;
     background-color: transparent;
     border-radius: 10px;
-    transform: rotateZ(52deg);
+    transform: rotateZ(45deg);
     transition: 0.5s ease all;
 }
 
