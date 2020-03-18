@@ -8,43 +8,44 @@ body {
     75%{background-color: }
     100%{background-color: #eccc68;}
 }
+
 form {
     color:black;
     font-size: 15pt;
     font-family: "courier";
-}
-input[type=text],input[type=email], input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
+    position: absolute;
+    top: 30%;
+    left: 45%;
 }
 
-input[type=submit]{
-    width: 50%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
 
-}
-
-#box{
-    box-sizing: border-box;
-    width: 50%;
-    border: 10px solid black;
+input[type=email], input[type=password] {
     
+    width: 105%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+button{
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    text-align: center;
+    width: 50%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+
 }
 
 
-
-
-
-
-#FirstName,#LastName,#email,#password,#passwordConfirm {
+#email,#new_password{
     border-width:1px;
     color:#aaa;
     font-family: Arial, Helvetica, sans-serif;
@@ -53,19 +54,9 @@ input[type=submit]{
 
 }
 
-
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+label {
+    display: block;
     text-align: center;
+    line-height: 150%;
+    font-size: .95em;
 }
-#formErrors{
-    display: none;
-    border-width: 2px;
-    border-style: solid;
-    border-color:rgb(255, 0, 0);
-}
-
-
