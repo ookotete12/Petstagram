@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const fs = require('fs');
 const request = require("request");
 const session = require('client-sessions');
 const sha1 = require('sha1');
@@ -33,6 +34,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 app.post('/login',function(req,res){
+    var user = req.body.Username; //email
     var check_Exist = "SELECT Email,Password FROM user_info WHERE Email = '"+String(req.body.Username)+"' and Password = '"+sha1(String(req.body.Password))+"'";
     console.log(req.body.Username);
     console.log(sha1(req.body.Password));
@@ -47,10 +49,11 @@ app.post('/login',function(req,res){
         }
         else{
             console.log('ok');
-            res.redirect('createaccount.html');
+            req.session.user = req.body.Username;
+            res.redirect('./homepage');
+
         }
         
-
     });
 });
 app.post('/register',function(req,res){
@@ -71,14 +74,12 @@ app.post('/register',function(req,res){
             database.query(sql,function(err,rows,fileds){
                 console.log(err);
     });
-            res.redirect('login.html')
+            res.redirect('/login')
             
         }
         else{
             console.log('email existed');
             res.redirect('createaccount.html?msg=2');
-            
-            
             
         }
         
@@ -120,7 +121,15 @@ app.post('/findpassword',function(req,res){
 
     });
 
+app.get('/logout',function(req,res){
+    req.session.reset();
+    req.session.message = 'youe logged out';
+    console.log('1');
+    return res.redirect('/login');
+});
+
+
 app.listen(8080,function(){
-    console.log("running server at http://localhost:8080/creataccount.html")
+    console.log("running server at http://localhost:8080/login.html")
 });
 
