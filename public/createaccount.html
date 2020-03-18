@@ -37,26 +37,26 @@
                <p id='error'> </p>
            </div>      
         </form>
+        <script>
+            errormess = document.getElementById('error');
+            function checkPassword(form) { 
+                    password1 = form.password.value; 
+                    password2 = form.confirmpassword.value;
+                    if (password1 != password2) { 
+                        errormess.innerHTML = "password is not match"
+                        password2.innerHTML = '';
+                        return false; 
+                    } 
+                } 
+    
+               
+            if(location.search.includes('2'))
+                document.write('Email is used, Please try another one');
+                       
+        </script>
         
         </div>
     </div>
-    <script>
-        errormess = document.getElementById('error');
-        function checkPassword(form) { 
-                password1 = form.password.value; 
-                password2 = form.confirmpassword.value;
-                if (password1 != password2) { 
-                    errormess.innerHTML = "password is not match"
-                    password2.innerHTML = '';
-                    return false; 
-                } 
-            } 
-
-           
-        if(location.search.includes('2'))
-            document.write('Email is used, Please try another one');
-                   
-    </script>
 </body>
 </html> 
 

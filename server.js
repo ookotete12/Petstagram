@@ -3,6 +3,15 @@ const app = express();
 const request = require("request");
 const session = require('client-sessions');
 const sha1 = require('sha1');
+const bodyParser = require("body-parser");
+const mysql = require('mysql');
+
+app.set("view engine", "ejs");
+app.use("/public", express.static("public"));
+app.use(bodyParser.urlencoded({
+    extended:false
+}));
+
 app.use(session({
     cookieName: 'session',
     secret: 'petstagram',
@@ -10,8 +19,6 @@ app.use(session({
     activeDuration: 5 * 60 * 1000,
 }));
 
-var mysql = require('mysql');
-const bodyParser = require("body-parser");
 var database = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -27,12 +34,10 @@ database.connect(function(err){
         console.log("databse success")
     }
 });
-app.use(express.static("public"));
-app.use(bodyParser.urlencoded({
-    extended:false
-}));
+
 app.use(bodyParser.json());
 app.post('/login',function(req,res){
+    var user = req.body.Username; //email
     var check_Exist = "SELECT Email,Password FROM user_info WHERE Email = '"+String(req.body.Username)+"' and Password = '"+sha1(String(req.body.Password))+"'";
     console.log(req.body.Username);
     console.log(sha1(req.body.Password));
@@ -47,7 +52,8 @@ app.post('/login',function(req,res){
         }
         else{
             console.log('ok');
-            res.redirect('createaccount.html');
+            req.session.user = req.body.Username;
+            res.redirect('/homepage/' + user);
         }
         
 
@@ -71,7 +77,7 @@ app.post('/register',function(req,res){
             database.query(sql,function(err,rows,fileds){
                 console.log(err);
     });
-            res.redirect('login.html')
+            res.redirect('/login')
             
         }
         else{
@@ -119,6 +125,21 @@ app.post('/findpassword',function(req,res){
     });
 
     });
+
+app.get('/logout', function(req,res){
+    req.session.reset();
+    req.session.message = 'you have logged out';
+    console.log("1");
+    return res.redirect('/login');
+})
+
+app.get('/homepage/:name',function(req,res){
+    res.render("homepage", {person: req.params.name});
+});
+
+app.get('/store', function(req,res){
+    res.render("store");
+})
 
 app.listen(8080,function(){
     console.log("running server at http://localhost:8080/creataccount.html")
