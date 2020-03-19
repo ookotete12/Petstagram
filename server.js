@@ -35,35 +35,45 @@ database.connect(function(err){
     }
 });
 
+var namestring=''
 app.use(bodyParser.json());
 app.post('/login',function(req,res){
-    var user = req.body.Username; //email
     var check_Exist = "SELECT Email,Password FROM user_info WHERE Email = '"+String(req.body.Username)+"' and Password = '"+sha1(String(req.body.Password))+"'";
-    console.log(req.body.Username);
-    console.log(sha1(req.body.Password));
+    var name = "SELECT First_Name, Last_Name FROM user_info WHERE Email = '"+String(req.body.Username)+ "'";
     database.query(check_Exist,function(err,result){
+        
         if (err){
-            console.login('[login Error] - ',err.message);
+            console.log('[login Error] - ',err.message);
             return;
         }
         if(result==''){
             console.log('email or password is not exist');
-            res.redirect('login.html?msg=1');
+            res.redirect('/public/login.html?msg=1');
         }
         else{
             console.log('ok');
-            req.session.user = req.body.Username;
-            res.redirect('/homepage/' + user);
+            database.query(name,function(err,result,fileds){
+                if (err) throw err;
+                Object.keys(result).forEach(function(key){
+                    var row = result[key];
+                    console.log(row.First_Name)
+                    console.log(row.Last_Name)
+                    req.session.user = req.body.Username;
+                    namestring = namestring + row.First_Name + ' ' + row.Last_Name;
+                    console.log(namestring);
+                    res.redirect('/homepage/' + row.First_Name +" " + row.Last_Name);
+                });
+                
+            });
+            
         }
-        
-
     });
 });
 app.post('/register',function(req,res){
     var check_Email = "SELECT Email FROM user_info WHERE Email = '"+String(req.body.email)+"'";
     database.query(check_Email,function(err,result){
         if (err){
-            console.login('[login Error] - ',err.message);
+            console.log('[login Error] - ',err.message);
             return;
         }
         if(result==''){
@@ -77,12 +87,12 @@ app.post('/register',function(req,res){
             database.query(sql,function(err,rows,fileds){
                 console.log(err);
     });
-            res.redirect('/login')
+            res.redirect('/public/login.html')
             
         }
         else{
             console.log('email existed');
-            res.redirect('createaccount.html?msg=2');
+            res.redirect('/public/createaccount.html?msg=2');
             
             
             
@@ -99,12 +109,12 @@ app.post('/findpassword',function(req,res){
     //console.log(String(req.body.new_password));
     database.query(check_Email,function(err,result){
         if (err){
-            console.login('[login Error] - ',err.message);
+            console.log('[login Error] - ',err.message);
             return;
         }
         if(result==''){
             console.log('email is not exist')
-            res.redirect('forgotpw.html?msg=3')
+            res.redirect('/public/forgotpw.html?msg=3')
 
         }
         else{
@@ -112,11 +122,12 @@ app.post('/findpassword',function(req,res){
             var updates = "UPDATE user_info SET Password = '"+ sha1(String(req.body.new_password))+"' WHERE Email = '"+String(req.body.find_email)+"'";
             database.query(updates,function(err,result){
                 if (err){
-                    console.login('[login Error] - ',err.message);
+                    console.log('[login Error] - ',err.message);
                     return;
                 }
                 else{
                     console.log('works');
+                    res.redirect('/public/login.html')
                 }
             });
             
@@ -126,18 +137,30 @@ app.post('/findpassword',function(req,res){
 
     });
 
+
 app.get('/logout', function(req,res){
     req.session.reset();
     req.session.message = 'you have logged out';
     console.log("1");
-    return res.redirect('/login');
+    return res.redirect('/public/login');
 })
 
 app.get('/homepage/:name',function(req,res){
+    console.log('pass')
+    var username = 'INSERT INTO feed (username,post) VALUES ("';
+    username += String(namestring) + '","' ;
+    username +=  String(req.body.post) +  '")';
+    database.query(username,function(err,rows,fileds){
+        console.log(err);
+    var post = req.body.post;
+    console.log(post);
+    
+    
+});
     res.render("homepage", {person: req.params.name});
 });
 
-app.get('/store', function(req,res){
+app.post('/store', function(req,res){
     res.render("store");
 })
 

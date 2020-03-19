@@ -8,16 +8,15 @@
         <script src="https://kit.fontawesome.com/5c96ea65b6.js" crossorigin="anonymous"></script>
         <script src="/public/homepage.js" type="text/javascript"></script>
     </head>
-
+​
     <body class="container">
         <div class="row">
             <div class="column" id="col1">
                 <div class= "navigator">
                     <div class="circle2"></div>
                     <input id="name" type="text" value="<%= person %>" disabled>
-                    <div class="store"><a class="store" href="store.html"><i class="fas fa-paw"></i><br>Store</a></div>
-                    <div class="setting"><a class="setting" href="setting.html"><i class="fas fa-cog"></i><br>Settings</a></div>
-                    <div class="liked"><a class="liked" href="like.html"><i class="fas fa-heart"></i><br>Liked Posts</a></div>
+                    <div class="store"><a class="store" href="/public/store.html"><i class="fas fa-paw"></i><br>Store</a></div>
+                    <div class="setting"><a class="setting" href="/public/setting.html"><i class="fas fa-cog"></i><br>Settings</a></div>
                 </div>
             </div>
             <div class="column" id="col2">
@@ -28,16 +27,27 @@
                     <div class="circle"></div>
                     <textarea id="scrollbarstyle" placeholder="What are we sharing today?"></textarea>
                     <div class="footer-block">
-                        <button id="photoinsert"><i style="font-size:20px;color:green" class="fa">&#xf03e;</i> Photo</button>
-                        <button id="post">Post <i class="fa fa-mail-forward" style="font-size:20px;color:white"></i></button>
+                        <input type="file" id="real" hidden="hidden" accept="image/*" name="image">
+                        <button type="button" id="photoinsert"><i style="font-size:20px;color:green" class="fa">&#xf03e;</i> Photo</button>
+                        <span id="fileinfo" style="color:red;font-weight: 1000;">No File Chosen, yet.</span>
+                        <button onclick = "makepost()" id="post">Post <i class="fa fa-mail-forward" style="font-size:20px;color:white"></i></button>
                     </div>
-                </div>
-                <div class="feed">
-                    <%= person %><br>kk<br>kk<br>kk<br>kk<br>kk<br>kk<br>kk<br>
-                    kk<br>kk<br>kk<br>kk<br>kk<br>kk<br>kk<br>kk<br>
-                    kk<br>kk<br>kk<br>kk<br>kk<br>kk<br>kk<br>kk<br>
-                    kk<br>kk<br>kk<br>kk<br>kk<br>kk<br>kk<br>kk<br>
-                    kk<br>kk<br>kk<br>kk<br>kk<br>kk<br>kk<br>kk<br>
+                    <script>
+                        var realbtn = document.getElementById("real");
+                        var mybtn = document.getElementById("photoinsert");
+                        var fileinfo = document.getElementById("fileinfo");
+                        mybtn.addEventListener("click", function(){
+                            realbtn.click();
+                            mybtn.disabled = true;
+                        });
+                        realbtn.addEventListener("change", function(){
+                            if (realbtn .value){
+                                fileinfo.innerHTML = realbtn.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+                            } else{
+                                fileinfo.innerHTML = "No file chosen, yet.";
+                            }
+                        });
+                    </script>
                 </div>
             </div>
             <div class="column" id="col3">

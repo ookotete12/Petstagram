@@ -1,0 +1,62 @@
+body {
+    animation: change 10s infinite;
+  }
+@keyframes change{
+    0%{background-color:#eccc68; }
+    25%{background-color: #f19066}
+    50%{background-color:#e15f41}
+    75%{background-color: }
+    100%{background-color: #eccc68;}
+}
+
+form {
+    color:black;
+    font-size: 15pt;
+    font-family: "courier";
+    position: absolute;
+    top: 30%;
+    left: 45%;
+}
+
+
+input[type=email], input[type=password] {
+    
+    width: 105%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+button{
+    position: absolute;
+    top: 150%;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    text-align: center;
+    width: 50%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+
+}
+
+
+#email,#new_password{
+    border-width:1px;
+    color:#aaa;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    margin: auto;
+
+}
+
+label {
+    display: block;
+    text-align: center;
+    line-height: 150%;
+    font-size: .95em;
+}
